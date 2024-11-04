@@ -1,4 +1,5 @@
 ﻿using System.Text;
+using CSharpCourse.DesignPatterns.Assignments;
 using CSharpCourse.DesignPatterns.Creational.Builder;
 
 namespace CSharpCourse.DesignPatterns.Tests.CreationalTests.BuilderTests;

@@ -2,42 +2,42 @@
 
 namespace CSharpCourse.DesignPatterns.Creational.Builder;
 
-internal class FluentMarkdownBuilder
+internal class NestedBuilders
 {
     private readonly StringBuilder _builder = new();
 
-    public FluentMarkdownBuilder AddText(string text)
+    public NestedBuilders AddText(string text)
     {
         _builder.Append(text);
         return this;
     }
 
-    public FluentMarkdownBuilder AddHeader(int headerLevel, string text)
+    public NestedBuilders AddHeader(int headerLevel, string text)
     {
         var prefix = new string(Enumerable.Repeat('#', headerLevel).ToArray());
         _builder.AppendLine($"{prefix} {text}");
         return this;
     }
 
-    public FluentMarkdownBuilder AddBold(string text)
+    public NestedBuilders AddBold(string text)
     {
         _builder.Append($"**{text}**");
         return this;
     }
 
-    public FluentMarkdownBuilder AddItalic(string text)
+    public NestedBuilders AddItalic(string text)
     {
         _builder.Append($"*{text}*");
         return this;
     }
 
-    public FluentMarkdownBuilder AddLink(string name, string url)
+    public NestedBuilders AddLink(string name, string url)
     {
         _builder.Append($"[{name}]({url})");
         return this;
     }
 
-    public FluentMarkdownBuilder NewLine()
+    public NestedBuilders NewLine()
     {
         _builder.AppendLine();
         return this;
